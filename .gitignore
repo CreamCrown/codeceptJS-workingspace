@@ -3,3 +3,6 @@ node_modules
 
 # 時間外申請用個人データ
 output
+
+# 個人情報はuploadしない
+/.env
