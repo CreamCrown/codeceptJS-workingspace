@@ -1,19 +1,19 @@
 require('dotenv').config()
 
 exports.config = {
-  tests: './*_test.js',
+  tests: './*/*_test.js',
   output: './output',
   helpers: {
     Puppeteer: {
       url: 'http://localhost',
       show: true,
-      // windowSize: '1200x900',
+      windowSize: '1200x900',
       "chrome": {
         "ignoreHTTPSErrors": true,
-        // "defaultViewport": {
-        //     "width": 1200,
-        //     "height": 900
-        // }
+        "defaultViewport": {
+            "width": 1200,
+            "height": 900
+        }
       }
     }
   },
@@ -24,21 +24,23 @@ exports.config = {
   mocha: {},
   name: 'codeceptJS-workingspace',
   plugins: {
-    stepByStepReport: {
-      enabled: true,
-      deleteSuccessful: false,
-    },
-    pauseOnFail: {},
+    // stepByStepReport: {
+    //   enabled: true,
+    //   deleteSuccessful: false,
+    //   screanshotsForAllureReport : true,
+    //   ignoreSteps : ["wait*"]
+    // },
+    // pauseOnFail: {},
     retryFailedStep: {
       enabled: true,
       retries: 5,
       minTimeout: 5000
     },
-    tryTo: {
-      enabled: true
-    },
-    screenshotOnFail: {
-      enabled: true
-    }
+    // tryTo: {
+    //   enabled: true
+    // },
+    // screenshotOnFail: {
+    //   enabled: true
+    // }
   }
 }
